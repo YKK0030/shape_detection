@@ -13,7 +13,7 @@ for dir in dirs:
     files = list(os.listdir('Images/'+dir))
     print( dir +' Folder has '+ str(len(files)) + ' Images')
     count = count + len(files)
-print( 'Images Folder has '+ str(count) + ' Images')
+print( 'Images shapes has '+ str(count) + ' Images')
 
 base_dir = 'Images/'
 img_size = 180
@@ -33,8 +33,8 @@ val_ds = tf.keras.utils.image_dataset_from_directory( base_dir,
                                                        batch_size=batch,
                                                        image_size=(img_size,img_size))
 
-flower_names = train_ds.class_names
-flower_names
+shape_labels = train_ds.class_names
+shape_labels
 
 import matplotlib.pyplot as plt
 
@@ -93,4 +93,4 @@ model.summary()
 
 history = model.fit(train_ds, epochs=15, validation_data=val_ds)
 
-model.save('Flower_Recog_Model.h5')
+model.save('shape_recoginition.h5')
