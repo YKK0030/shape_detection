@@ -5,11 +5,9 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 
 # Load the trained model
-model = load_model('Flower_Recog_Model.h5')
+model = load_model('model.h5')
 
-# Define image size and the flower class names
 img_size = 180
-flower_names = ['daisy', 'dandelion', 'rose', 'sunflower', 'tulip']
 
 # Function to classify images using the trained model
 def classify_image(image):
@@ -47,7 +45,7 @@ while True:
     cv2.putText(frame, f"{class_name}: {confidence_score:.2f}%", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
 
     # Display the resulting frame
-    cv2.imshow('Flower Recognition', frame)
+    cv2.imshow('shape Recognition', frame)
 
     # Break the loop on 'q' key press
     if cv2.waitKey(1) & 0xFF == ord('q'):
